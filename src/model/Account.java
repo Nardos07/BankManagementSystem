@@ -1,4 +1,6 @@
-public class Account {
+package model;
+
+public abstract class Account {
 
     private int accountNumber;
     private String ownerName;
@@ -30,6 +32,7 @@ public class Account {
         this.balance = balance;
     }
 
+    // Method Overloading
     public void deposit(double amount) {
         balance = balance + amount;
         System.out.println(amount + " deposited successfully");
@@ -40,19 +43,12 @@ public class Account {
         System.out.println(amount + " deposited successfully");
     }
 
-    public void withdraw(double amount) {
-
-        if(amount <= balance) {
-            balance = balance - amount;
-            System.out.println(amount + " withdrawn successfully");
-        } else {
-            System.out.println("Insufficient balance");
-        }
-    }
-
     public void displayInfo() {
         System.out.println("Account Number: " + accountNumber);
         System.out.println("Owner Name: " + ownerName);
         System.out.println("Balance: " + balance);
     }
+
+    // Abstract Method
+    public abstract void withdraw(double amount);
 }

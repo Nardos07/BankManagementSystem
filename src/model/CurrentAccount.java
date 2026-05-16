@@ -1,3 +1,5 @@
+package model;
+
 public class CurrentAccount extends Account {
 
     private double overdraftLimit;
@@ -16,9 +18,9 @@ public class CurrentAccount extends Account {
 
             setBalance(getBalance() - amount);
 
-            System.out.println(amount + " withdrawn from current account");
-
-        } else {
+            System.out.println(amount + " withdrawn successfully");
+        }
+        else {
             System.out.println("Overdraft limit exceeded");
         }
     }

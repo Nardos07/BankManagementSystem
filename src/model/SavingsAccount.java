@@ -1,3 +1,5 @@
+package model;
+
 public class SavingsAccount extends Account {
 
     private double interestRate;
@@ -14,8 +16,15 @@ public class SavingsAccount extends Account {
 
         if(amount > 5000) {
             System.out.println("Cannot withdraw more than 5000");
-        } else {
-            super.withdraw(amount);
+        }
+        else if(amount <= getBalance()) {
+
+            setBalance(getBalance() - amount);
+
+            System.out.println(amount + " withdrawn successfully");
+        }
+        else {
+            System.out.println("Insufficient balance");
         }
     }
 
